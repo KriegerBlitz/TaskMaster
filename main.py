@@ -1,10 +1,14 @@
 # This is where I will put the code, once I have some.
 from flask import Flask  #, render_template, request, redirect
-
+from flask_sqlalchemy import SQLAlchemy
+import os
 Tasks = []
 app = Flask(__name__)
 
-
+# Database file config
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'tasks.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 @app.route('/')
 def home():
     return '<p>Hello World!</p>'
