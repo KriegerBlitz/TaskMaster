@@ -1,5 +1,4 @@
-# This is where I will put the code, once I have some.
-from flask import Flask  #, render_template, request, redirect
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 Tasks = []
